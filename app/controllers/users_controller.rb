@@ -1,15 +1,11 @@
-class SubscriptionsController < ApplicationController
+class UsersController < ApplicationController
     def index
-        @subs = Subscription.all
+        @userSubscriptions = Subscription.joins(:subscriptions_users).where("subscriptions_users.user_id = ?", current_user.id)
     end
-    # View all available subscriptions
-
-    def show
-        @sub = Subscription.find(params[:id])
-    end
-    # View a particular subscription
-
     
+    def show
+    end
+
 
     # May need to generate user controller for user to view their data
     

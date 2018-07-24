@@ -1,5 +1,5 @@
-Listing all subscriptions <br>
-
+<h1>Menu list</h1>
+<h2><%= link_to  "Back to home", root_path %></h2>
 <% @subs.each do |sub| %>
-  <%= sub.name%>
+  <%= sub.name %> $<%= sub.price %> <%= link_to  "Select", subscription_path(sub) %> <br>
 <% end %>

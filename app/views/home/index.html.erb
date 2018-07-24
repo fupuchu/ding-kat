@@ -3,8 +3,10 @@
 <p>this is where the root page should be with links all different parts of the website</p>
 
 <% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
-  <% else %>
-  <%= link_to 'Sign In', user_session_path %>
+    <%= link_to 'My Subscriptions', users_path %><br>
+    <%= link_to 'View Menu', subscriptions_path %><br>
+    <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
+    <% else %>
+    <%= link_to 'Sign In', user_session_path %>
 <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>
