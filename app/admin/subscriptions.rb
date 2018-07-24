@@ -1,3 +1,3 @@
 ActiveAdmin.register Subscription do
-    permit_params :name, :email, :pusblished_at
+    permit_params :name, :price, :pusblished_at
 end
