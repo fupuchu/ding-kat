@@ -1,11 +1,19 @@
 class UsersController < ApplicationController
     def index
-        @userSubscriptions = Subscription.joins(:subscriptions_users).where("subscriptions_users.user_id = ?", current_user.id)
+        @user = User.find(current_user.id)
+        if @user.subscription_id != nil
+            @subscription = Subscription.find(@user.subscription_id)
+        end
     end
     
-    def show
+    def update
+        @user = User.find(current_user.id)
+        @user.update_attribute(:subscription_id, params[:id])
+        redirect_to users_path
     end
 
+    def show
+    end
 
     # May need to generate user controller for user to view their data
     
