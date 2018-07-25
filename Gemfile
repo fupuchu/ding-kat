@@ -26,9 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Use Bootstrap
-gem 'bootstrap'
-gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -41,6 +39,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Project Specific Gems
 gem 'devise'
 gem 'activeadmin'
+
+# Use Bootstrap
+gem 'bootstrap'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
