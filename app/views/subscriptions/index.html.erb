@@ -1,5 +1,13 @@
-<h1>Menu list</h1>
-<h2><%= link_to  "Back to home", root_path %></h2>
-<% @subs.each do |sub| %>
-  <%= sub.name %> $<%= sub.price %> <%= link_to  "Select", subscription_path(sub) %> <br>
-<% end %>
+<div class="container">
+    <div class="row">
+    <div class="col-lg-12 text-center">
+
+      <h1>Menu list</h1>
+      <button><%= link_to  "Back to home", root_path %></button>
+      <% @subs.each do |sub| %>
+        <%= sub.name %> $<%= sub.price %> <button><%= link_to  "Select", subscription_path(sub) %></button> <br>
+      <% end %>
+    
+    </div>
+    </div>
+</div>
