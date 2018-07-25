@@ -6,9 +6,11 @@ class SubscriptionsController < ApplicationController
 
     def show
         @sub = Subscription.find(params[:id])
+        @user = User.find(current_user.id)
     end
     # View a particular subscription
 
+    
     
 
     # May need to generate user controller for user to view their data
