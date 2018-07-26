@@ -1,0 +1,29 @@
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+h2 {
+    font-family: 'Cabin Sketch', cursive; 
+}
+
+button {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hero {
+	background-image: image-url('dingkat-hero-op45.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 480px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.index-row {
+	height: 200px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 100;
+}
