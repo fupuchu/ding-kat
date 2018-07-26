@@ -7,9 +7,6 @@ class UsersController < ApplicationController
     end
     
     def update
-        @user = User.find(current_user.id)
-        @user.update_attribute(:subscription_id, params[:id])
-        redirect_to users_path
     end
 
     def show

@@ -6,7 +6,7 @@
         <h2>Tingkats prepared from the heart.</h2>
 
         <% if user_signed_in? %>
-            <%= link_to 'My profile', users_path %><br>
+            <%= link_to 'My profile', profile_path %><br>
             <%= link_to 'View Menu', subscriptions_path %><br>
             <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
             <% else %>
