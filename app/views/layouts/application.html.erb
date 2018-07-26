@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great" rel="stylesheet">
   </head>
 
+
   <body>
-    <%= render 'partials/navbar' %>    
+    <%= render 'partials/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= render 'partials/footer' %>     
   </body>
 </html>
