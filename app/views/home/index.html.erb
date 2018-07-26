@@ -1,28 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<p>this is where the root page should be with links all different parts of the website</p>
+<div class="container">
+    <div class="row">
+    <div class="col-lg-12 text-center">
 
-<% if user_signed_in? %>
-    <%= link_to 'My profile', users_path %><br>
-    <%= link_to 'View Menu', subscriptions_path %><br>
-    <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
-    <% else %>
-    <%= link_to 'Sign In', user_session_path %>
-<%= link_to 'Sign Up', new_user_registration_path %>
-<% end %>
+        <h1>dingkat</h1>
+        <h2>Ding Dong! Tingkats prepared from the heart.</h2>
 
-<div class='container'>
-    <div class = row>
-         
+        <% if user_signed_in? %>
+            <%= link_to 'My profile', users_path %><br>
+            <%= link_to 'View Menu', subscriptions_path %><br>
+            <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
+            <% else %>
+            <button><%= link_to 'Sign In', user_session_path %></button>
+            <button><%= link_to 'Sign Up', new_user_registration_path %></button>
+        <% end %>
+
     </div>
-
-    <div class = row>
-        <img src='/app/assets/images/food-chinese.jpg'>
-        <img src='/app/assets/images/food-malay.jpg'>
-        <img src='/app/assets/images/food-indian.jpg'>
-        <img src='/app/assets/images/food-japanese.jpg'>
-        <img src='/app/assets/images/food-western.jpg'>
-        <img src='/app/assets/images/food-italian.jpg'>
     </div>
-
 </div>
