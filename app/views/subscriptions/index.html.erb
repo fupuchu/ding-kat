@@ -4,12 +4,22 @@
 
       <h1>SUBSCRIPTION OPTIONS</h1>
       
-      <button><%= link_to  "Back to Home", root_path %></button> 
+      <% if @current == nil %>
+      <h2>You do not have a subscription plan</h2>
+      <% else %>
+      <h2>Your current subscription plan is for <%= @subscription.name %><h2>
+      <% end %>
+      <button><%= link_to  "Back to Home", root_path %></button>
       <br>
       <br>
       <div class='row-fluid'>
       <% @subs.each do |sub| %>
-      <div class="span6 text-left"><%= sub.name %> $<%= sub.price %></div> <div class="span6 text-left"><button class='subsc-button'><%= link_to  "Select", subscription_path(sub) %></button></div> <br>
+      <div class="span6 text-left"><%= sub.name %> $<%= sub.price %></div>
+      <% if @current == sub.id %>
+        <div class="span6 text-left"><button class='subsc-button'><%= link_to  "Unsubscribe", unsubscribe_path, method: :put, data: {confirm: 'Are you sure you want to unsubscribe?'} %></button></div> <br>
+      <% else %>
+        <div class="span6 text-left"><button class='subsc-button'><%= link_to  "Select", subscription_path(sub) %></button></div> <br>
+      <% end %>
       <% end %>
       </div>
 
