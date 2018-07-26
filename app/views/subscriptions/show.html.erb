@@ -1,4 +1,12 @@
-<h1><%= @sub.name %></h1>
-<h2>$<%= @sub.price %></h2>
+<div class="container">
+    <div class="row">
+    <div class="col-lg-12 text-center">
 
-<%= link_to "Subscribe to this", user_path(@sub.id), method: :put %>
+        <h1><%= @sub.name %></h1>
+        <h2>$<%= @sub.price %></h2>
+
+        <button><%= link_to "Subscribe to this", user_path(@sub.id), method: :put %></button>
+
+    </div>
+    </div>
+</div>

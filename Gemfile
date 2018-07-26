@@ -39,7 +39,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Project Specific Gems
 gem 'devise'
 gem 'activeadmin'
-gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
 
 # Use Bootstrap

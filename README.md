@@ -8,3 +8,10 @@ RUN `rails db:reset`, all the db actions below will run automatically
 5. `rake routes` to see available options for you
 
 Index should show sign in and sign up
+
+
+ToDo:
+
+1. Finish up frontend work
+2. Finish routes
+3. Fix Action Mailer
