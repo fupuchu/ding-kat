@@ -1,12 +1,18 @@
 class SubscriptionsController < ApplicationController
     def index
         @subs = Subscription.all
+        if User.find(current_user.id) != nil
+            @user = User.find(current_user.id)
+            @current = User.find(current_user.id).subscription_id
+            if @current != nil
+                @subscription = Subscription.find(@user.subscription_id)
+            end
+        end
     end
     # View all available subscriptions
 
     def show
         @sub = Subscription.find(params[:id])
-        @user = User.find(current_user.id)
     end
     # View a particular subscription
 
