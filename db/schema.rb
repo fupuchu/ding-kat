@@ -74,5 +74,4 @@ ActiveRecord::Schema.define(version: 2018_07_24_141448) do
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
-  add_foreign_key "users", "subscriptions"
 end
