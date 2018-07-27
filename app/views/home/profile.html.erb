@@ -1,7 +1,9 @@
 <div class="container">
+<div class="row">
+    <div class="col-lg-12 text-center">
     <% if @user %>
       <h1>Profile</h1>
-      <h1>Welcome <%= @user.first_name %></h1>
+    <h2>Hello <%= @user.first_name %></h2>
     <% if @subscription %>
         <h2>Your current subscription plan is for <%= @subscription.name %></h2>
         <button><%= link_to  "Edit Subscription", edit_subscription_path %></button>
@@ -13,6 +15,7 @@
     <h2><%= link_to  "Please Login", user_session_path %></h2>
 <% end %>
 
-<button><%= link_to  "Back to home", root_path %></button>
-
+<button class="sub-button"><%= link_to  "Balik Kampong (Back to Home)", root_path %></button>
 </div>
+</div>
+
