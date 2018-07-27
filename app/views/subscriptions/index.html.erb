@@ -2,16 +2,88 @@
     <div class="row">
     <div class="col-lg-12 text-center">
 
-      <h1>SUBSCRIPTION OPTIONS</h1>
+      <h1>MENU OPTIONS</h1>
       
       <% if @current == nil %>
-      <h2>You do not have a subscription plan</h2>
-      <h2>Pick one from below:</h2>
+      <h2>Please select a menu choice:</h2>
       <% else %>
-      <h2>Your current subscription plan is for <%= @subscription.name %><h2>
+      <h2>Your current menu is for <%= @subscription.name %><h2>
       <% end %>
 
-     
+        <div class="row" >
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" <%= image_tag 'food-chinese.jpg' %>
+            <div class="card-body">
+              <h5 class="card-title">Chinese Cuisine - $45</h5>
+              <div class="card-text">
+                <p>Chicken or Pork</p>
+                <p>Fresh Vegetables</p>
+                <p>Daily Soup</p>
+                <p>Fagrant White Rice</p>
+              </div>
+              <a href="#" class="btn btn-primary">Select This</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" <%= image_tag 'food-malay.jpg' %>
+            <div class="card-body">
+              <h5 class="card-title">Malay Cuisine - $45</h5>
+              <div class="card-text">
+                <p>Chicken or Mutton</p>
+                <p>Fresh Vegetables</p>
+                <p>Daily Soup</p>
+                <p>Fagrant White Rice</p>
+              </div>
+              <a href="#" class="btn btn-primary">Select This</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" <%= image_tag 'food-indian.jpg' %>
+            <div class="card-body">
+              <h5 class="card-title">Indian Cuisine - $45</h5>
+              <div class="card-text">
+                <p>Chicken or Mutton</p>
+                <p>Fresh Vegetables</p>
+                <p>Daily Soup</p>
+                <p>Basmati Rice</p>
+              </div>
+              <a href="#" class="btn btn-primary">Select This</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" <%= image_tag 'food-japanese.jpg' %>
+            <div class="card-body">
+              <h5 class="card-title">Japanese Bento - $60</h5>
+             <div class="card-text">
+                <p>Chicken / Beef / Fish</p>
+                <p>Fresh Vegetables</p>
+                <p>Daily Soup</p>
+                <p>Short Grain Rice</p>
+              </div>
+              <a href="#" class="btn btn-primary">Select This</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" <%= image_tag 'DingkatLogo.png' %>
+            <div class="card-body">
+              <h5 class="card-title">DingKat Special - $80</h5>
+             <div class="card-text">
+                <p>Fish or Beef</p>
+                <p>Fresh Vegetables/Salad</p>
+                <p>Gourmet Soup</p>
+                <p>Rice/Pasta/Noodles/Potatoes</p>
+              </div>
+              <a href="#" class="btn btn-primary">Select This</a>
+            </div>
+          </div>
+
+        </div>
+
         <div class="row">
 
           <div class="col-sm-3">

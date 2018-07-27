@@ -53,4 +53,25 @@ p {
 	vertical-align: middle;	
 }
 
+.card-text {
+	line-height: 12px;
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 18px;
+}
 
+.card-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 25px;
+}
+
+.btn-primary {
+	background-color: white;
+	font-family: 'Cabin Sketch', cursive;
+	text-decoration-color: inherit;
+}
+
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
+}
