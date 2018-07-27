@@ -12,8 +12,8 @@
 # User.destroy_all
 
 Subscription.create!([{name: '1 Week', price: 60}, {name: '1 Month', price: 240}, {name: '3 Months', price: 660}, {name: '6 Months', price: 1200}])
-User.create!(email: 'leon@example.com', password: 'password', password_confirmation: 'password')
-User.create!(email: 'sam@example.com', password: 'password', password_confirmation: 'password')
-User.create!(email: 'julian@example.com', password: 'password', password_confirmation: 'password')
-User.create!(email: 'jay@example.com', password: 'password', password_confirmation: 'password')
+User.create!(first_name: 'Leon', last_name: 'Dingkat', email: 'leon@example.com', password: 'password', password_confirmation: 'password')
+User.create!(first_name: 'Sam', last_name: 'Dingkat', email: 'sam@example.com', password: 'password', password_confirmation: 'password')
+User.create!(first_name: 'Julian', last_name: 'Dingkat', email: 'julian@example.com', password: 'password', password_confirmation: 'password')
+User.create!(first_name: 'Jay', last_name: 'Dingkat', email: 'jay@example.com', password: 'password', password_confirmation: 'password')
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

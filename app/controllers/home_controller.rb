@@ -38,5 +38,4 @@ class HomeController < ApplicationController
         redirect_to subscriptions_path
     end
 
-
 end
