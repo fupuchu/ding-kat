@@ -1,6 +1,7 @@
 <% if @user %>
-    <h1>Profile</h1>
-    <h1>Welcome <%= @user.first_name %></h1>
+    <div class="container">
+      <h1>Profile</h1>
+      <h1>Welcome <%= @user.first_name %></h1>
     <% if @subscription %>
         <h2>Your current subscription plan is for <%= @subscription.name %></h2>
         <button><%= link_to  "Edit Subscription", edit_subscription_path %></button>
@@ -11,4 +12,13 @@
 <% else %>
     <h1>Please login<h1>
 <% end %>
+
+<h2><%= link_to  "Edit Profile", edit_user_registration_path %></h2>
+
+<button><%= link_to  "Back to home", root_path %></button>
+
+</div>
+
+<h2><%= link_to  "Edit Profile", edit_user_registration_path %></h2>
+
 <button><%= link_to  "Back to home", root_path %></button>
