@@ -1,11 +1,13 @@
 class SubscriptionsController < ApplicationController
     def index
         @subs = Subscription.all
-        if User.find(current_user.id) != nil
-            @user = User.find(current_user.id)
-            @current = User.find(current_user.id).subscription_id
-            if @current != nil
-                @subscription = Subscription.find(@user.subscription_id)
+        if current_user
+            if User.find(current_user.id) != nil
+                @user = User.find(current_user.id)
+                @current = User.find(current_user.id).subscription_id
+                if @current != nil
+                    @subscription = Subscription.find(@user.subscription_id)
+                end
             end
         end
     end

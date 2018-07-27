@@ -3,10 +3,27 @@ class HomeController < ApplicationController
     end
 
     def profile
-        @user = User.find(current_user.id)
-        if @user.subscription_id != nil
-            @subscription = Subscription.find(@user.subscription_id)
+        if current_user != nil
+            @user = User.find(current_user.id)
+            if @user.subscription_id != nil
+                @subscription = Subscription.find(@user.subscription_id)
+            end
         end
+    end
+
+    def about
+    end
+
+    def contact
+    end
+
+    def catering
+    end
+
+    def how
+    end
+
+    def faq
     end
 
     def subscribe
