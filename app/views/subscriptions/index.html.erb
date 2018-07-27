@@ -6,22 +6,33 @@
       
       <% if @current == nil %>
       <h2>You do not have a subscription plan</h2>
+      <h2>Pick one from below:</h2>
       <% else %>
       <h2>Your current subscription plan is for <%= @subscription.name %><h2>
       <% end %>
-      <button><%= link_to  "Back to Home", root_path %></button>
-      <br>
-      <br>
-      <div class='row-fluid'>
-      <% @subs.each do |sub| %>
-      <div class="span6 text-left"><%= sub.name %> $<%= sub.price %></div>
-      <% if @current == sub.id %>
-        <div class="span6 text-left"><button class='subsc-button'><%= link_to  "Unsubscribe", unsubscribe_path, method: :put, data: {confirm: 'Are you sure you want to unsubscribe?'} %></button></div> <br>
-      <% else %>
-        <div class="span6 text-left"><button class='subsc-button'><%= link_to  "Select", subscription_path(sub) %></button></div> <br>
-      <% end %>
-      <% end %>
-      </div>
+
+     
+        <div class="row">
+
+          <div class="col-sm-4">
+          </div>
+
+          <div class="col-sm-4" id="sub-options">
+            <% @subs.each do |sub| %>
+            <% if @current == sub.id %>
+              <button class="sub-button"><%= link_to  "Unsubscribe", unsubscribe_path, method: :put, data: {confirm: 'Are you sure you want to unsubscribe?'} %></button> <span id="subsc-text"><%= sub.name %> $<%= sub.price %></span></br>
+            <% else %>
+              <button class="sub-button"><%= link_to  "Select", subscription_path(sub) %></button> <span id="subsc-text"><%= sub.name %> $<%= sub.price %></span></br>
+            <% end %>
+            <% end %>
+          </div>
+
+          <div class="col-sm-4">
+          </div>
+
+        </div>
+        <br>
+        <button><%= link_to  "Balik Kampong (Back to Home)", root_path %></button>
 
     </div>
     </div>
