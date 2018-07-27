@@ -1,14 +1,24 @@
-<div class="container">
-<h1>Profile</h1>
-<h1>Welcome <%= @user.first_name %></h1>
-<% if @subscription %>
-<h2>Your current subscription plan is for <%= @subscription.name %></h2>
-<button><%= link_to  "Edit Subscription", edit_subscription_path %></button>
+<% if @user %>
+    <div class="container">
+      <h1>Profile</h1>
+      <h1>Welcome <%= @user.first_name %></h1>
+    <% if @subscription %>
+        <h2>Your current subscription plan is for <%= @subscription.name %></h2>
+        <button><%= link_to  "Edit Subscription", edit_subscription_path %></button>
+    <% else %>
+        <h2>You do not have a subscription plan, click <span><button><%= link_to  "here", subscriptions_path %></button></span> to choose one</h2>
+    <% end %>
+    <h2><%= link_to  "Edit Profile", edit_user_registration_path %></h2>
 <% else %>
-<h2>You do not have a subscription plan, click <span><button><%= link_to  "here", subscriptions_path %></button></span> to choose one</h2>
+    <h1>Please login<h1>
 <% end %>
+
 <h2><%= link_to  "Edit Profile", edit_user_registration_path %></h2>
 
 <button><%= link_to  "Back to home", root_path %></button>
 
 </div>
+
+<h2><%= link_to  "Edit Profile", edit_user_registration_path %></h2>
+
+<button><%= link_to  "Back to home", root_path %></button>
