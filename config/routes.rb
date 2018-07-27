@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     get '/profile/subscription', to: "subscriptions#index", as: "edit_subscription"
     put 'subscriptions/unsubscribe', to: "home#unsubscribe", as: "unsubscribe"
     put '/subscriptions/:id/subscribe', to: "home#subscribe", as: "subscribe"
-    resources :subscriptions, only: %i[index show] do
-      resources :users
-    end
+    resources :subscriptions, only: %i[index show]
+    resources :menus, only: %i[index show]
+
     
     resources :users
   
