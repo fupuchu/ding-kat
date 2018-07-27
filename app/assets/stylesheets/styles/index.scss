@@ -1,9 +1,12 @@
 h1 {
     font-family: 'Fredericka the Great', cursive;
+    font-size: 90px;
+    text-shadow: 2px 2px #d3d3d3;
 }
 
 h2 {
-    font-family: 'Cabin Sketch', cursive; 
+    font-family: 'Cabin Sketch', cursive;
+        text-shadow: 2px 2px #d3d3d3;
 }
 
 button {
@@ -12,33 +15,22 @@ button {
 }
 
 .hero {
-	background-image: image-url('dingkat-hero-op45.jpg');
+	background-image: image-url('dingkat-hero-op55.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;
-	height: 480px;
+	background-size: contain;
+	height: 626px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .index-row {
-	height: 200px;
+	height: 350px;
 	text-align: center;
 	font-size: 22px;
 	font-weight: 100;
 }
 
-#sub-options {
-	font-family: 'Cabin Sketch', cursive; 
-	font-size: 30px;
-	display: inline;
-	text-align: left;
-	vertical-align: middle;
+p {
+	margin: 10px;
 }
-
-.sub-button {
-	font-size: 18px;
-	vertical-align: middle;
-	
-}
-
