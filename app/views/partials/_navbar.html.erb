@@ -2,10 +2,10 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Plans</a>
+                <%= link_to 'Plans', subscriptions_path , class: "nav-link" %>
             </li>
         </ul>
     </div>
@@ -13,17 +13,18 @@
         <a class="navbar-brand mx-auto" href="/"><%= image_tag 'dingkat-logo.png' %></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">My Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-            </li>
+            <% if user_signed_in? %>
+            <%= link_to 'My profile', profile_path , class: "nav-link" %>
+            <%= link_to 'View Menu', subscriptions_path , class: "nav-link" %>
+            <%= link_to 'Sign Out', destroy_user_session_url, method: :delete , class: "nav-link" %>
+            <% else %>
+            <%= link_to 'Sign In', user_session_path , class: "nav-link" %>
+            <%= link_to 'Sign Up', new_user_registration_path , class: "nav-link" %>
+        <% end %>
         </ul>
     </div>
 </nav>
-
