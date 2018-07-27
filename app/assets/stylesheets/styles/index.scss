@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Fredericka the Great', cursive;
-    font-size: 90px;
+    font-size: 50px;
     text-shadow: 2px 2px #d3d3d3;
 }
 
@@ -34,3 +34,23 @@ button {
 p {
 	margin: 10px;
 }
+
+#page-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 40px;
+}
+
+#sub-options {
+	font-family: 'Cabin Sketch', cursive; 
+	font-size: 30px;
+	display: inline;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.sub-button {
+	font-size: 20px;
+	vertical-align: middle;	
+}
+
+
