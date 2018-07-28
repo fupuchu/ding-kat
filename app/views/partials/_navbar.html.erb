@@ -7,6 +7,9 @@
             <li class="nav-item">
                 <%= link_to 'Plans', subscriptions_path , class: "nav-link" %>
             </li>
+            <li class="nav-item">
+                <%= link_to 'Menu', menus_path , class: "nav-link" %>
+            </li>
         </ul>
     </div>
     <div class="mx-auto order-0">
@@ -19,7 +22,6 @@
         <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <%= link_to 'My profile', profile_path , class: "nav-link" %>
-            <%= link_to 'View Menu', subscriptions_path , class: "nav-link" %>
             <%= link_to 'Sign Out', destroy_user_session_url, method: :delete , class: "nav-link" %>
             <% else %>
             <%= link_to 'Sign In', user_session_path , class: "nav-link" %>
