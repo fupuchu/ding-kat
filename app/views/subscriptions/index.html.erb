@@ -20,7 +20,7 @@
             <% if @current == sub.id %>
               <button class="sub-button"><%= link_to  "Unsubscribe", unsubscribe_path, method: :put, data: {confirm: 'Are you sure you want to unsubscribe?'} %></button> <span id="subsc-text"><%= sub.name %> $<%= sub.price %></span></br>
             <% else %>
-              <button class="sub-button"><%= link_to  "Select", subscription_path(sub) %></button> <span id="subsc-text"><%= sub.name %> $<%= sub.price %></span></br>
+              <button class="sub-button"><%= link_to  "Select This", subscribe_path(sub), method: :put %></button> <span id="subsc-text"><%= sub.name %> $<%= sub.price %></span></br>
             <% end %>
             <% end %>
           </div>

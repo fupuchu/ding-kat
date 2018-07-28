@@ -4,77 +4,27 @@
 
       <h1>MENU OPTIONS</h1>
       
-        <div class="row" >
-
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" <%= image_tag 'food-chinese.jpg' %>
-            <div class="card-body">
-              <h5 class="card-title">Chinese Cuisine - $45</h5>
-              <div class="card-text">
-                <p>Chicken or Pork</p>
-                <p>Fresh Vegetables</p>
-                <p>Daily Soup</p>
-                <p>Fagrant White Rice</p>
-              </div>
-              <a href="#" class="btn btn-primary">Select This</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" <%= image_tag 'food-malay.jpg' %>
-            <div class="card-body">
-              <h5 class="card-title">Malay Cuisine - $45</h5>
-              <div class="card-text">
-                <p>Chicken or Mutton</p>
-                <p>Fresh Vegetables</p>
-                <p>Daily Soup</p>
-                <p>Fagrant White Rice</p>
-              </div>
-              <a href="#" class="btn btn-primary">Select This</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" <%= image_tag 'food-indian.jpg' %>
-            <div class="card-body">
-              <h5 class="card-title">Indian Cuisine - $45</h5>
-              <div class="card-text">
-                <p>Chicken or Mutton</p>
-                <p>Fresh Vegetables</p>
-                <p>Daily Soup</p>
-                <p>Basmati Rice</p>
-              </div>
-              <a href="#" class="btn btn-primary">Select This</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" <%= image_tag 'food-japanese.jpg' %>
-            <div class="card-body">
-              <h5 class="card-title">Japanese Bento - $60</h5>
-             <div class="card-text">
-                <p>Chicken / Beef / Fish</p>
-                <p>Fresh Vegetables</p>
-                <p>Daily Soup</p>
-                <p>Short Grain Rice</p>
-              </div>
-              <a href="#" class="btn btn-primary">Select This</a>
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" <%= image_tag 'DingkatLogo.png' %>
-            <div class="card-body">
-              <h5 class="card-title">DingKat Special - $80</h5>
-             <div class="card-text">
-                <p>Fish or Beef</p>
-                <p>Fresh Vegetables/Salad</p>
-                <p>Gourmet Soup</p>
-                <p>Rice/Pasta/Noodles/Potatoes</p>
-              </div>
-              <a href="#" class="btn btn-primary">Select This</a>
-            </div>
-          </div>
+        <div class="row">
+            <% @menus.each do |menu| %>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" <%= image_tag menu.img_src %>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= menu.name %></h5>
+                        <h5 class="card-title">$<%= menu.price %>/week</h5>
+                    <div class="card-text">
+                        <p><%= menu.line_1 %></p>
+                        <p><%= menu.line_2 %></p>
+                        <p><%= menu.line_3 %></p>
+                        <p><%= menu.line_4 %></p>
+                    </div>
+                    <% if @current == menu.id %>
+                        <button class="sub-button btn btn-primary"><%= link_to  "Unsubscribe", unsubscribe_path, method: :put, data: {confirm: 'Are you sure you want to unsubscribe?'} %></button>
+                    <% else %>
+                        <button class="sub-button btn btn-primary"><%= link_to  "Select This", select_menu_path(menu), method: :put %></button>
+                    <% end %>
+                    </div>
+                </div>
+            <% end %>
 
         </div>
 
