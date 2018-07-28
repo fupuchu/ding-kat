@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
     def index
+        @menus = Menu.all
         @subs = Subscription.all
         if current_user
             if User.find(current_user.id) != nil
