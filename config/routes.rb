@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     get '/how-it-works', to: "home#how", as: "how"
     get '/faq', to: "home#faq", as: "faq"
 
+    get '/subscriptions', to: "subscriptions#index", as: "subscriptions"
     get '/profile/subscription', to: "subscriptions#index", as: "edit_subscription"
     put 'subscriptions/unsubscribe', to: "home#unsubscribe", as: "unsubscribe"
     put '/subscriptions/:id/subscribe', to: "home#subscribe", as: "subscribe"
-    resources :subscriptions, only: %i[index show]
+    put '/menus/:id/select', to: "home#select_menu", as: "select_menu"
     resources :menus, only: %i[index show]
 
     
