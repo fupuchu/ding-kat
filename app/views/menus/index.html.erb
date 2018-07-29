@@ -3,8 +3,9 @@
     <div class="col-lg-12 text-center">
 
       <h1>MENU OPTIONS</h1>
-      
-        <div class="row">
+      <h2>You are currently on <%= @current %>
+        <div class="container">
+            <div class="row">
             <% @menus.each do |menu| %>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" <%= image_tag menu.img_src %>
@@ -26,6 +27,7 @@
                 </div>
             <% end %>
 
+        </div>
         </div>
 
         <div class="row">
