@@ -1,12 +1,13 @@
-h1 {
+.hero-title-text {
     font-family: 'Fredericka the Great', cursive;
     font-size: 90px;
     text-shadow: 2px 2px #d3d3d3;
 }
 
-h2 {
+.hero-sub-text {
     font-family: 'Cabin Sketch', cursive;
-        text-shadow: 2px 2px #d3d3d3;
+    font-size: 28px;
+    text-shadow: 1px 1px #d3d3d3;
 }
 
 button {
@@ -37,4 +38,56 @@ button {
 
 p {
 	margin: 10px;
+}
+
+#page-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 40px;
+}
+
+#sub-options {
+	font-family: 'Cabin Sketch', cursive; 
+	font-size: 30px;
+	display: inline;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.sub-button {
+	font-size: 20px;
+	vertical-align: middle;	
+}
+
+.card-text {
+	line-height: 12px;
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 18px;
+}
+
+.card-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 25px;
+}
+
+.btn-primary {
+	background-color: #ffffff;
+	font-color: #000000;
+	font-family: 'Cabin Sketch', cursive;
+	text-decoration-color: inherit;
+}
+
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
+}
+
+h1 {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 30px;
+}
+
+h2 {
+	font-family: 'Cabin Sketch', cursive;
+    font-size: 28px;
 }
