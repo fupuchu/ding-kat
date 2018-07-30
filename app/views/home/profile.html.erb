@@ -4,7 +4,20 @@
             <% if @user %>
                 <h1>Profile</h1>
                 <h2>Hello <%= @user.first_name %> <%= @user.last_name %></h2>
-                <p>you are on some plan</p>
+                <p>Your current menu is: <%= @menu.name %> </p>
+                <p>Your subscription start date is: <%= @user.subscription_start %></p>
+                <p>Your subscription end date is: <%= @user.subscription_end %></p>
+                <h3>Delivery Address</h3>
+                <p><%= @user.address_one %></p>
+                <% if @user.address_two != nil %>
+                  <p><%= @user.address_two %></p>
+                <% end %>
+                <p><%= @user.postal_code %></p>
+                <% if @user.subscription_renew %>
+                  <p>Your subscription is recurring</p>
+                  <% else %>
+                  <p>Your subscription will end on <%= @user.subscription_end %> 
+                <% end %>
                 <p>the start date is 17/10/1111</p>
                 <p>the end date is 17/10/1111</p>
                 <p>
