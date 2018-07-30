@@ -1,6 +1,6 @@
 .hero-title-text {
     font-family: 'Fredericka the Great', cursive;
-    font-size: 90px;
+    font-size: 50px;
     text-shadow: 2px 2px #d3d3d3;
 }
 
@@ -25,11 +25,19 @@ button {
 	align-items: center;
 }
 
+.jumbotron {
+	background-image: image-url('dingkat-hero-op55.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 626px;
+}
+
 .row {
 	margin: 0;
 }
 
 .index-row {
+	height: 400px;
 	margin-top: 50px;
 	text-align: center;
 	font-size: 22px;
@@ -90,4 +98,3 @@ h1 {
 h2 {
 	font-family: 'Cabin Sketch', cursive;
     font-size: 28px;
-}
