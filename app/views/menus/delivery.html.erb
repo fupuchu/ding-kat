@@ -17,7 +17,6 @@
         </p>
         <p>
             <%= f.label :end_date %><br>
-            <span class="text-danger"><%= show_errors(@user, :subscription_end) %></span>
             <% if @user.subscription_end != nil %>
                 <%= f.date_field :subscription_end, min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
             <% else %>
