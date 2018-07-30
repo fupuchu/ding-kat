@@ -76,14 +76,14 @@ p {
 	font-size: 25px;
 }
 
-// .btn-primary {
-// 	background-color: white;
-// 	font-family: 'Cabin Sketch', cursive;
-// 	text-decoration-color: inherit;
-// }
-
 .card {
 	margin: 0 auto; /* Added */
 	float: none; /* Added */
 	margin-bottom: 10px; /* Added */
+}
+
+#delivery-form {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
 }
