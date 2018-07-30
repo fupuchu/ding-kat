@@ -33,7 +33,9 @@
                 <% end %>
                 <%= link_to  "Cancel Subscription", cancel_delivery_path, class: "btn btn-primary", method: :put, data: {confirm: 'Are you sure you want to cancel?'} %>
             <% else %>
-            <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
+                <% if @user.subscription_end != nil %>
+                    <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
+                <% end %>
                 <p><%= link_to 'New Subscription',menus_path ,class: "btn btn-info" %></p>
             <% end %>
 

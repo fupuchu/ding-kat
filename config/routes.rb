@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     put '/subscriptions/:id/subscribe', to: "subscriptions#subscribe", as: "subscribe"
     put '/menus/:id/select', to: "menus#select_menu", as: "select_menu"
     put '/menus/unsubscribe', to: "menus#unselect_menu", as: "unselect_menu"
-    put '/menus/delivery/confirm', to: "menus#select_delivery", as: "select_delivery"
+    patch '/menus/delivery/confirm', to: "menus#select_delivery", as: "select_delivery"
 
     
     resources :users

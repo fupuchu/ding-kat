@@ -46,7 +46,8 @@ class MenusController < ApplicationController
             else
                 if @user.menu_id != nil
                     @menu = Menu.find(@user.menu_id)
-                    redirect_to delivery_path
+                    @error = "ERROR, END DATE HAS TO BE AFTER START DATE"
+                    render delivery_path
                 else
                     redirect_to new_user_session_path
                 end
