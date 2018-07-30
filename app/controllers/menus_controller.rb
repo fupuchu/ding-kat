@@ -46,12 +46,20 @@ class MenusController < ApplicationController
             else
                 if @user.menu_id != nil
                     @menu = Menu.find(@user.menu_id)
-                    render delivery_path
+                    redirect_to delivery_path
                 else
                     redirect_to new_user_session_path
                 end
             end
         end
+    end
+
+    def cancel_delivery
+        @user = User.find(current_user.id)
+        @user.update_attribute(:menu_id, nil)
+        @user.update_attribute(:subscription_renew, false)
+        @user.update_attribute(:delivery_arranged, false)
+        redirect_to profile_path
     end
 
     private def delivery_params

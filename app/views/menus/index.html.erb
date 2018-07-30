@@ -20,7 +20,11 @@
                         <p><%= menu.line_4 %></p>
                     </div>
                     <% if @current == menu.id %>
-                        <%= link_to  "Arrange Delivery", delivery_path , class: "btn btn-primary" %>
+                        <% if @user.delivery_arranged == false %>
+                            <%= link_to  "Arrange Delivery", delivery_path , class: "btn btn-primary" %>
+                        <% else %>
+                            <%= link_to  "Edit Delivery", delivery_path , class: "btn btn-primary" %>
+                        <% end %>
                     <% else %>
                         <%= link_to  "Select This", select_menu_path(menu), method: :put , class: "btn btn-warning" %>
                     <% end %>
