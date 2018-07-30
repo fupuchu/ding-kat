@@ -5,31 +5,35 @@
             <h2>Hello <%= @user.first_name %> <%= @user.last_name %></h2>
             
             <% if @user.menu_id != nil %>
-                <p>Your selected menu: <%= @menu.name %> </p>
-            <% end %>
-            
-            <% if @user.subscription_start != nil && @user.subscription_end != nil %>
-                <p>Your subscription started on: <%= @user.subscription_start %></p>
-                <p>Your subscription is ending on: <%= @user.subscription_end %></p>
+                <p>
+                    Your selected menu: 
+                        <b>
+                        <%= @menu.name %>
+                        </b>
+                </p>
             <% end %>
 
             <% if @user.address_one != nil %>
+                <b>
                 <h3>Delivery Address</h3>
-                <p><%= @user.address_one %></p>
+                <p><%= @user.address_one %>
                 <% if @user.address_two != nil %>
-                    <p><%= @user.address_two %></p>
+                    <%= @user.address_two %>
                 <% end %>
-                <p><%= @user.postal_code %></p>
+                <%= @user.postal_code %></p>
+                </b>
             <% end %>
 
             <% if @user.delivery_arranged %>
+            <p>Your subscription started on: <b><%= @user.subscription_start %></b></p>
                 <% if @user.subscription_renew %>
                     <p>Your subscription is recurring</p>
                 <% else %>
-                    <p>Your subscription will end on <%= @user.subscription_end %></p>
+                    <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
                 <% end %>
                 <%= link_to  "Cancel Subscription", cancel_delivery_path, class: "btn btn-primary", method: :put, data: {confirm: 'Are you sure you want to cancel?'} %>
             <% else %>
+            <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
                 <p><%= link_to 'New Subscription',menus_path ,class: "btn btn-info" %></p>
             <% end %>
 
