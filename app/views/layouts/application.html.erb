@@ -8,13 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great" rel="stylesheet">
   </head>
-
-
   <body>
     <%= render 'partials/navbar' %>
+    <main role="main">
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'partials/footer' %>     
+    <%= render 'layouts/messages' %>
+    </main>
+    <%= render 'partials/footer' %>  
   </body>
 </html>

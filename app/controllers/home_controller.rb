@@ -12,7 +12,6 @@ class HomeController < ApplicationController
     end
 
     def about
-        
     end
 
     def contact
@@ -31,7 +30,7 @@ class HomeController < ApplicationController
         if current_user != nil
             @user = User.find(current_user.id)
             @user.update_attribute(:subscription_id, params[:id])
-            redirect_to subscriptions_path
+            redirect_to menus_path
         else
             redirect_to new_user_session_path
         end
@@ -40,7 +39,7 @@ class HomeController < ApplicationController
     def unsubscribe
         @user = User.find(current_user.id)
         @user.update_attribute(:subscription_id, nil)
-        redirect_to subscriptions_path
+        redirect_to menus_path
     end
 
     def select_menu
