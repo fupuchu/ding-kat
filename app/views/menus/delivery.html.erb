@@ -9,7 +9,10 @@
 
 
             <div class="col-lg-12">                
-                <%= form_for :user, url: select_delivery_path(@user), method: :put do |f| %>
+                <%= form_for :user, url: select_delivery_path(@user), method: :patch do |f| %>
+                <% if @error %>
+                    <div class="alert alert-danger" role="alert"><%= @error %></div>
+                <% end %>
                 <p>
                     <%= f.label :start_date %><br>
                     <% if @user.subscription_start != nil %>
