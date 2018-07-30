@@ -12,12 +12,18 @@ Rails.application.routes.draw do
     get '/how-it-works', to: "home#how", as: "how"
     get '/faq', to: "home#faq", as: "faq"
 
+    get '/subscriptions', to: "subscriptions#index", as: "subscriptions"
     get '/profile/subscription', to: "subscriptions#index", as: "edit_subscription"
-    put 'subscriptions/unsubscribe', to: "home#unsubscribe", as: "unsubscribe"
-    put '/subscriptions/:id/subscribe', to: "home#subscribe", as: "subscribe"
-    resources :subscriptions, only: %i[index show] do
-      resources :users
-    end
+    get '/menus', to: "menus#index", as: "menus"
+    get '/menus/delivery', to: "menus#delivery", as: "delivery"
+    get '/menus/delivery/payment', to: "menus#payment", as: "payment"
+
+    put 'subscriptions/unsubscribe', to: "subscriptions#unsubscribe", as: "unsubscribe"
+    put '/subscriptions/:id/subscribe', to: "subscriptions#subscribe", as: "subscribe"
+    put '/menus/:id/select', to: "menus#select_menu", as: "select_menu"
+    put '/menus/unsubscribe', to: "menus#unselect_menu", as: "unselect_menu"
+    put '/menus/delivery/confirm', to: "menus#select_delivery", as: "select_date"
+
     
     resources :users
   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_135433) do
+ActiveRecord::Schema.define(version: 2018_07_29_203349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2018_07_25_135433) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "menus", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "line_1"
+    t.string "line_2"
+    t.string "line_3"
+    t.string "line_4"
+    t.string "img_src"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -76,8 +88,18 @@ ActiveRecord::Schema.define(version: 2018_07_25_135433) do
     t.string "unlock_token"
     t.datetime "locked_at"
     t.string "unconfirmed_email"
+    t.string "phone_number"
+    t.string "address_one"
+    t.string "address_two"
+    t.string "postal_code"
+    t.date "subscription_start"
+    t.date "subscription_end"
+    t.boolean "subscription_renew", default: true, null: false
+    t.bigint "menu_id"
+    t.boolean "delivery_arranged", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["menu_id"], name: "index_users_on_menu_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true

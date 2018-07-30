@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Fredericka the Great', cursive;
-    font-size: 90px;
+    font-size: 50px;
     text-shadow: 2px 2px #d3d3d3;
 }
 
@@ -24,11 +24,19 @@ button {
 	align-items: center;
 }
 
+.jumbotron {
+	background-image: image-url('dingkat-hero-op55.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 626px;
+}
+
 .row {
 	margin: 0;
 }
 
 .index-row {
+	height: 400px;
 	margin-top: 50px;
 	text-align: center;
 	font-size: 22px;
@@ -37,4 +45,45 @@ button {
 
 p {
 	margin: 10px;
+}
+
+#page-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 40px;
+}
+
+#sub-options {
+	font-family: 'Cabin Sketch', cursive; 
+	font-size: 30px;
+	display: inline;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.sub-button {
+	font-size: 20px;
+	vertical-align: middle;	
+}
+
+.card-text {
+	line-height: 12px;
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 18px;
+}
+
+.card-title {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 25px;
+}
+
+// .btn-primary {
+// 	background-color: white;
+// 	font-family: 'Cabin Sketch', cursive;
+// 	text-decoration-color: inherit;
+// }
+
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
 }
