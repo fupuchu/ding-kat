@@ -7,6 +7,7 @@
         
         <div class="form-row">
 
+
             <div class="col-lg-12">                
                 <%= form_for :user, url: select_date_path(@user), method: :put do |f| %>
                 <p>
@@ -39,7 +40,7 @@
                     <%= f.text_field :postal_code, required: true, minlength: 6, maxlength: 6, placeholder: "Postal", class: "form-control" %><br>  
                 </p>
                 <p>
-                <%= f.submit "Submit" %>
+                <%= f.submit "Submit" , class: "btn btn-primary" %>
                 </p>
                 <% end %>
             </div>
@@ -49,7 +50,6 @@
         <p>
          <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
        </p>
-
     </div>
     </div>
 </div>

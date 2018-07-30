@@ -1,20 +1,44 @@
 <div class="container container-margin">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <% if @user %>
-                <h1>Profile</h1>
-                <h2>Hello <%= @user.first_name %> <%= @user.last_name %></h2>
-                <p>you are on some plan</p>
-                <p>the start date is 17/10/1111</p>
-                <p>the end date is 17/10/1111</p>
+            <h1>Profile</h1>
+            <h2>Hello <%= @user.first_name %> <%= @user.last_name %></h2>
+            
+            <% if @user.menu_id != nil %>
                 <p>
-                <%= link_to 'View Menu', menus_path , class: "btn btn-info" %>
+                    Your selected menu: 
+                        <b>
+                        <%= @menu.name %>
+                        </b>
                 </p>
-            <%= link_to  "Edit Profile", edit_user_registration_path , class: "btn btn-primary" %>
-            <% else %>
-            <%= link_to  "Please Login", user_session_path , class: "btn btn-primary" %>
             <% end %>
-            <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
+
+            <% if @user.address_one != nil %>
+                <b>
+                <h3>Delivery Address</h3>
+                <p><%= @user.address_one %>
+                <% if @user.address_two != nil %>
+                    <%= @user.address_two %>
+                <% end %>
+                <%= @user.postal_code %></p>
+                </b>
+            <% end %>
+
+            <% if @user.delivery_arranged %>
+            <p>Your subscription started on: <b><%= @user.subscription_start %></b></p>
+                <% if @user.subscription_renew %>
+                    <p>Your subscription is recurring</p>
+                <% else %>
+                    <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
+                <% end %>
+                <%= link_to  "Cancel Subscription", cancel_delivery_path, class: "btn btn-primary", method: :put, data: {confirm: 'Are you sure you want to cancel?'} %>
+            <% else %>
+            <p>Your subscription will end on <b><%= @user.subscription_end %></b></p>
+                <p><%= link_to 'New Subscription',menus_path ,class: "btn btn-info" %></p>
+            <% end %>
+
+        <%= link_to  "Edit Profile", edit_user_registration_path , class: "btn btn-primary" %>
+        <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
         </div>
     </div>
 </div>

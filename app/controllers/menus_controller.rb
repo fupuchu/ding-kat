@@ -1,5 +1,4 @@
 class MenusController < ApplicationController
-    before_action :authenticate_user!
     def index
         @menus = Menu.all
         if current_user
@@ -43,16 +42,24 @@ class MenusController < ApplicationController
             @user = User.find(current_user.id)
             if @user.update(delivery_params)
                 @user.update_attribute(:delivery_arranged, true)
-                redirect_to payment_path
+                redirect_to profile_path
             else
                 if @user.menu_id != nil
                     @menu = Menu.find(@user.menu_id)
-                    render delivery_path
+                    redirect_to delivery_path
                 else
                     redirect_to new_user_session_path
                 end
             end
         end
+    end
+
+    def cancel_delivery
+        @user = User.find(current_user.id)
+        @user.update_attribute(:menu_id, nil)
+        @user.update_attribute(:subscription_renew, false)
+        @user.update_attribute(:delivery_arranged, false)
+        redirect_to profile_path
     end
 
     private def delivery_params

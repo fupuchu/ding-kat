@@ -18,11 +18,12 @@ Rails.application.routes.draw do
     get '/menus/delivery', to: "menus#delivery", as: "delivery"
     get '/menus/delivery/payment', to: "menus#payment", as: "payment"
 
+    put 'profile/cancel_delivery', to: "menus#cancel_delivery", as: "cancel_delivery"
     put 'subscriptions/unsubscribe', to: "subscriptions#unsubscribe", as: "unsubscribe"
     put '/subscriptions/:id/subscribe', to: "subscriptions#subscribe", as: "subscribe"
     put '/menus/:id/select', to: "menus#select_menu", as: "select_menu"
     put '/menus/unsubscribe', to: "menus#unselect_menu", as: "unselect_menu"
-    put '/menus/delivery/confirm', to: "menus#select_delivery", as: "select_date"
+    put '/menus/delivery/confirm', to: "menus#select_delivery", as: "select_delivery"
 
     
     resources :users
