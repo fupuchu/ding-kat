@@ -24,11 +24,19 @@ button {
 	align-items: center;
 }
 
+.jumbotron {
+	background-image: image-url('dingkat-hero-op55.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 626px;
+}
+
 .row {
 	margin: 0;
 }
 
 .index-row {
+	height: 400px;
 	margin-top: 50px;
 	text-align: center;
 	font-size: 22px;
@@ -68,11 +76,11 @@ p {
 	font-size: 25px;
 }
 
-.btn-primary {
-	background-color: white;
-	font-family: 'Cabin Sketch', cursive;
-	text-decoration-color: inherit;
-}
+// .btn-primary {
+// 	background-color: white;
+// 	font-family: 'Cabin Sketch', cursive;
+// 	text-decoration-color: inherit;
+// }
 
 .card {
 	margin: 0 auto; /* Added */

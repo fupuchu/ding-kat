@@ -12,7 +12,6 @@ class HomeController < ApplicationController
     end
 
     def about
-        
     end
 
     def contact
@@ -26,5 +25,4 @@ class HomeController < ApplicationController
 
     def faq
     end
-
 end
