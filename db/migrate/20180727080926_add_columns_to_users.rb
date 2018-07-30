@@ -6,6 +6,6 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :postal_code, :string
     add_column :users, :subscription_start, :date
     add_column :users, :subscription_end, :date
-    add_column :users, :subscription_renew, :boolean
+    add_column :users, :subscription_renew, :boolean, default: true
   end
 end

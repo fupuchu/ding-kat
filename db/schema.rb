@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_220346) do
+ActiveRecord::Schema.define(version: 2018_07_29_203349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 2018_07_28_220346) do
     t.date "subscription_end"
     t.boolean "subscription_renew", default: true, null: false
     t.bigint "menu_id"
+    t.boolean "delivery_arranged", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["menu_id"], name: "index_users_on_menu_id"

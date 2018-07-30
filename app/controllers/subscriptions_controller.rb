@@ -3,21 +3,30 @@ class SubscriptionsController < ApplicationController
         @menus = Menu.all
         @subs = Subscription.all
         if current_user
-            if User.find(current_user.id) != nil
-                @user = User.find(current_user.id)
-                @current = User.find(current_user.id).subscription_id
-                if @current != nil
-                    @subscription = Subscription.find(@user.subscription_id)
-                end
+            @user = User.find(current_user.id)
+            @current = @user.subscription_id
+            if @current != nil
+                @subscription = Subscription.find(@current)
             end
         end
     end
     # View all available subscriptions
 
-    def show
-        @sub = Subscription.find(params[:id])
+    def subscribe
+        if current_user
+            @user = User.find(current_user.id)
+            @user.update_attribute(:subscription_id, params[:id])
+            redirect_to subscriptions_path
+        else
+            redirect_to new_user_session_path
+        end
     end
-    # View a particular subscription
+
+    def unsubscribe
+        @user = User.find(current_user.id)
+        @user.update_attribute(:subscription_id, nil)
+        redirect_to subscriptions_path
+    end
 
     
     
