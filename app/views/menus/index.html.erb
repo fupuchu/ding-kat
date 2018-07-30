@@ -1,51 +1,39 @@
-<div class="container mt-5 pt-5">
+<div class="container container-margin mt-5 pt-5">
     <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1>MENU OPTIONS</h1>
-        <div class="row">
-            <% @menus.each do |menu| %>
-                <% if @current == menu.id %>
-                    <div class="card" style="width: 18rem; border: 3px solid #007bff;">
-                <% else %>
-                    <div class="card" style="width: 18rem;">
-                <% end %>
-                    <img class="card-img-top" <%= image_tag menu.img_src %>
-                    <div class="card-body">
-                        <h5 class="card-title"><%= menu.name %></h5>
-                        <h5 class="card-title">$<%= menu.price %>/week</h5>
-                    <div class="card-text">
-                        <p><%= menu.line_1 %></p>
-                        <p><%= menu.line_2 %></p>
-                        <p><%= menu.line_3 %></p>
-                        <p><%= menu.line_4 %></p>
-                    </div>
+        <div class="col-lg-12 text-center">
+          <h1>MENU OPTIONS</h1>
+            <br>
+            <div class="row">
+                <% @menus.each do |menu| %>
                     <% if @current == menu.id %>
-                        <% if @user.delivery_arranged == false %>
+                        <div class="card" style="width: 18rem; border: 3px solid #007bff;">
+                    <% else %>
+                        <div class="card" style="width: 18rem;">
+                    <% end %>
+                        <img class="card-img-top" <%= image_tag menu.img_src %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= menu.name %></h5>
+                            <h5 class="card-title">$<%= menu.price %>/week</h5>
+                        <div class="card-text">
+                            <p><%= menu.line_1 %></p>
+                            <p><%= menu.line_2 %></p>
+                            <p><%= menu.line_3 %></p>
+                            <p><%= menu.line_4 %></p>
+                        </div>
+                        <% if @current == menu.id %>
                             <%= link_to  "Arrange Delivery", delivery_path , class: "btn btn-primary" %>
                         <% else %>
-                            <%= link_to  "Edit Delivery", delivery_path , class: "btn btn-primary" %>
+                            <%= link_to  "Select This", select_menu_path(menu), method: :put , class: "btn btn-warning" %>
                         <% end %>
-                    <% else %>
-                        <%= link_to  "Select This", select_menu_path(menu), method: :put , class: "btn btn-warning" %>
-                    <% end %>
+                        </div>
                     </div>
-                </div>
-            <% end %>
+                <% end %>
 
+            </div>
         </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-sm-3">
-          </div>
-
-          <div class="col-sm-3">
-          </div>
-
-        </div>
+    </div>
         <br>
-        <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-secondary" %>
-    </div>
-    </div>
+        <div align="center">
+            <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
+        </div>
 </div>

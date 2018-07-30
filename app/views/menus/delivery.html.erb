@@ -1,31 +1,29 @@
-<div class="container mt-5 pt-5">
+<div class="container container-margin mt-5 pt-5">
     <div class="row">
     <div class="col-lg-12 text-center">
 
       <h1>DELIVERY</h1>
       <h2>You have selected <%= @menu.name %></h2>
         
-        <div class="row">
-        
-            <div class="col-sm-5">
-            </div>
+        <div class="form-row">
 
-            <div class="col-sm-5">                
-                <%= form_for :user, url: select_delivery_path(@user), method: :put do |f| %>
+
+            <div class="col-lg-12">                
+                <%= form_for :user, url: select_date_path(@user), method: :put do |f| %>
                 <p>
                     <%= f.label :start_date %><br>
                     <% if @user.subscription_start != nil %>
-                        <%= f.date_field :subscription_start, min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
+                        <%= f.date_field :subscription_start, min: Date.today.next_week.advance(:days=>0), step: 7, required: true, class: "form-control" %>
                     <% else %>
-                        <%= f.date_field :subscription_start, value: Date.today.next_week.advance(:days=>0), min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
+                        <%= f.date_field :subscription_start, value: Date.today.next_week.advance(:days=>0), min: Date.today.next_week.advance(:days=>0), step: 7, required: true, class: "form-control" %>
                     <% end %>
                 </p>
                 <p>
                     <%= f.label :end_date %><br>
                     <% if @user.subscription_end != nil %>
-                        <%= f.date_field :subscription_end, min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
+                        <%= f.date_field :subscription_end, min: Date.today.next_week.advance(:days=>4), step: 7, required: true, class: "form-control"%>
                     <% else %>
-                        <%= f.date_field :subscription_end, value: Date.today.next_week.advance(:days=>4), min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
+                        <%= f.date_field :subscription_end, value: Date.today.next_week.advance(:days=>4), min: Date.today.next_week.advance(:days=>4), step: 7, required: true, class: "form-control" %>
                     <% end %>
                 </p>
                 <p>
@@ -34,12 +32,12 @@
                 </p>
                 <p>
                     <%= f.label :address %><br>
-                    <%= f.text_field :address_one, required: true, placeholder: "Street Name"%><br>  
-                    <%= f.text_field :address_two, placeholder: "Unit Number (optional)"%><br>
+                    <%= f.text_field :address_one, required: true, placeholder: "Street Name", class: "form-control"%><br>  
+                    <%= f.text_field :address_two, placeholder: "Unit Number (optional)", class: "form-control" %><br>
                 </p>
                 <p>
                     <%= f.label :postal_code %><br>
-                    <%= f.text_field :postal_code, required: true, minlength: 6, maxlength: 6, placeholder: "Postal" %><br>  
+                    <%= f.text_field :postal_code, required: true, minlength: 6, maxlength: 6, placeholder: "Postal", class: "form-control" %><br>  
                 </p>
                 <p>
                 <%= f.submit "Submit" , class: "btn btn-primary" %>
@@ -47,13 +45,11 @@
                 <% end %>
             </div>
 
-            <div class="col-sm-5">
-            </div>
-
         </div>
+        <br>
         <p>
-        <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
-        </p>
+         <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
+       </p>
     </div>
     </div>
 </div>
