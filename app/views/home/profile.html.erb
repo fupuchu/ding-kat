@@ -3,24 +3,18 @@
         <div class="col-lg-12 text-center">
             <% if @user %>
                 <h1>Profile</h1>
-                <br>
-                <h2>Hello <%= @user.first_name %></h2>
-            <% if @subscription %>
-                <h2>Your current subscription plan is for <%= @subscription.name %></h2>
-                <br><br>
-                <button><%= link_to  "Edit Subscription", edit_subscription_path %></button>
-            <br>
+                <h2>Hello <%= @user.first_name %> <%= @user.last_name %></h2>
+                <p>you are on some plan</p>
+                <p>the start date is 17/10/1111</p>
+                <p>the end date is 17/10/1111</p>
+                <p>
+                <%= link_to 'View Menu', menus_path , class: "btn btn-info" %>
+                </p>
+            <%= link_to  "Edit Profile", edit_user_registration_path , class: "btn btn-primary" %>
             <% else %>
-                <h2>You do not have a subscription plan, click <span><button><%= link_to  "here", subscriptions_path %></button></span> to choose one</h2>
+            <%= link_to  "Please Login", user_session_path , class: "btn btn-primary" %>
             <% end %>
-            
-            <br>
-            <button><%= link_to  "Edit Profile", edit_user_registration_path %></button>
-            <% else %>
-                <h2><%= link_to  "Please Login", user_session_path %></h2>
-            <% end %>
-            <br><br>
-            <button class="sub-button"><%= link_to  "Balik Kampong (Back to Home)", root_path %></button>
+            <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
         </div>
     </div>
 </div>
