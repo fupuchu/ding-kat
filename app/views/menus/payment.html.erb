@@ -1,24 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.26.0/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.26.0/js/paypal-checkout.min.js"></script>
+</head>
+
+<body>
 <div class="container container-margin mt-5 pt-5">
     <div class="row">
     <div class="col-lg-12 text-center">
 
       <h1>PAYMENT PAGE</h1>
-        <div class="row">
-        <h1>$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</h1>
-        </div>
+      <h2><%= @menu.name %></h2>
+      <h2>$<%= @menu.price %></h2>
+        <div id="paypal-button-container"></div>
 
-        <div class="row">
-
-          <div class="col-sm-3">
-          </div>
-
-          <div class="col-sm-3">
-          </div>
-
-        </div>
         <br>
-        <%= link_to  "Balik Kampong (Back to Home)", root_path, class: "btn btn-primary" %>
 
     </div>
     </div>
 </div>
+
+    <script>
+
+        // Render the PayPal button
+
+        paypal.Button.render({
+
+            // Pass in the Braintree SDK
+
+            braintree: braintree,
+
+            // Pass in your Braintree authorization key
+
+            client: {
+                sandbox: paypal.request.get('/demo/checkout/api/braintree/client-token/'),
+                production: '<insert production auth key>'
+            },
+
+            // Set your environment
+
+            env: 'sandbox', // sandbox | production
+
+            // Wait for the PayPal button to be clicked
+
+            payment: function(data, actions) {
+
+                // Make a call to create the payment
+
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '45.0', currency: 'SGD' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // Wait for the payment to be authorized by the customer
+
+            onAuthorize: function(data, actions) {
+                return actions.payment.tokenize().then(function(data) {
+                    window.alert('Thank you for your payment!');
+                    window.setTimeout(function(){window.location='/profile'}, 3000);
+                });
+            }
+
+        }, '#paypal-button-container');
+
+    </script>
+</body>
+    
+
+
+
