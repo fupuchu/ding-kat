@@ -6,53 +6,53 @@
       <h2>You have selected <%= @menu.name %></h2>
         
         <div class="row">
-        <%= form_for :user, url: select_date_path(@user), method: :put do |f| %>
-        <p>
-            <%= f.label :start_date %><br>
-            <% if @user.subscription_start != nil %>
-                <%= f.date_field :subscription_start, min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
-            <% else %>
-                <%= f.date_field :subscription_start, value: Date.today.next_week.advance(:days=>0), min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
-            <% end %>
-        </p>
-        <p>
-            <%= f.label :end_date %><br>
-            <% if @user.subscription_end != nil %>
-                <%= f.date_field :subscription_end, min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
-            <% else %>
-                <%= f.date_field :subscription_end, value: Date.today.next_week.advance(:days=>4), min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
-            <% end %>
-        </p>
-        <p>
-            <%= f.label :auto_renew %>
-            <%= f.check_box :subscription_renew %>
-        </p>
-        <p>
-            <%= f.label :address %><br>
-            <%= f.text_field :address_one, required: true, placeholder: "Street Name"%><br>  
-            <%= f.text_field :address_two, placeholder: "Unit Number (optional)"%><br>
-        </p>
-        <p>
-            <%= f.label :postal_code %><br>
-            <%= f.text_field :postal_code, required: true, minlength: 6, maxlength: 6, placeholder: "Postal" %><br>  
-        </p>
-        <p>
-        <%= f.submit "Submit" %>
-        </p>
-        <% end %>
-        </div>
+        
+            <div class="col-sm-5">
+            </div>
 
-        <div class="row">
+            <div class="col-sm-2">                
+                <%= form_for :user, url: select_date_path(@user), method: :put do |f| %>
+                <p>
+                    <%= f.label :start_date %><br>
+                    <% if @user.subscription_start != nil %>
+                        <%= f.date_field :subscription_start, min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
+                    <% else %>
+                        <%= f.date_field :subscription_start, value: Date.today.next_week.advance(:days=>0), min: Date.today.next_week.advance(:days=>0), step: 7, required: true%>
+                    <% end %>
+                </p>
+                <p>
+                    <%= f.label :end_date %><br>
+                    <% if @user.subscription_end != nil %>
+                        <%= f.date_field :subscription_end, min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
+                    <% else %>
+                        <%= f.date_field :subscription_end, value: Date.today.next_week.advance(:days=>4), min: Date.today.next_week.advance(:days=>4), step: 7, required: true%>
+                    <% end %>
+                </p>
+                <p>
+                    <%= f.label :auto_renew %>
+                    <%= f.check_box :subscription_renew %>
+                </p>
+                <p>
+                    <%= f.label :address %><br>
+                    <%= f.text_field :address_one, required: true, placeholder: "Street Name"%><br>  
+                    <%= f.text_field :address_two, placeholder: "Unit Number (optional)"%><br>
+                </p>
+                <p>
+                    <%= f.label :postal_code %><br>
+                    <%= f.text_field :postal_code, required: true, minlength: 6, maxlength: 6, placeholder: "Postal" %><br>  
+                </p>
+                <p>
+                <%= f.submit "Submit" %>
+                </p>
+                <% end %>
+            </div>
 
-          <div class="col-sm-3">
-          </div>
-
-          <div class="col-sm-3">
-          </div>
+            <div class="col-sm-5">
+            </div>
 
         </div>
         <br>
-        <button class="sub-button"><%= link_to  "Balik Kampong (Back to Home)", root_path %></button>
+        <%= link_to  "Balik Kampong (Back to Home)", root_path , class: "btn btn-primary" %>
 
     </div>
     </div>
