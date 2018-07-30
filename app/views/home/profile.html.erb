@@ -15,6 +15,7 @@
             <% end %>
             
             <br>
+            <button><%= link_to  "Cancel renewal", cancel_delivery_path, method: :put, data: {confirm: 'Are you sure you want to cancel?'} %></button>
             <button><%= link_to  "Edit Profile", edit_user_registration_path %></button>
             <% else %>
                 <h2><%= link_to  "Please Login", user_session_path %></h2>

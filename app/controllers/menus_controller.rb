@@ -55,6 +55,14 @@ class MenusController < ApplicationController
         end
     end
 
+    def cancel_delivery
+        @user = User.find(current_user.id)
+        @user.update_attribute(:menu_id, nil)
+        @user.update_attribute(:subscription_renew, false)
+        @user.update_attribute(:delivery_arranged, false)
+        redirect_to profile_path
+    end
+    
     private def delivery_params
         params.require(:user).permit(:subscription_start, :subscription_end, :subscription_renew, :address_one, :address_two, :postal_code)
     end
