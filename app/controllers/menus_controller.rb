@@ -42,7 +42,7 @@ class MenusController < ApplicationController
             @user = User.find(current_user.id)
             if @user.update(delivery_params)
                 @user.update_attribute(:delivery_arranged, true)
-                redirect_to profile_path
+                redirect_to payment_path
             else
                 if @user.menu_id != nil
                     @menu = Menu.find(@user.menu_id)
@@ -55,6 +55,11 @@ class MenusController < ApplicationController
         end
     end
 
+    def payment
+        @user = User.find(current_user.id)
+        @menu = Menu.find(@user.menu_id)
+    end
+    
     def cancel_delivery
         @user = User.find(current_user.id)
         @user.update_attribute(:menu_id, nil)
